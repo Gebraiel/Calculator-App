@@ -1,0 +1,224 @@
+:root{
+    /*Start Light Theme Colors*/
+    --light-theme-main-bg:hsl(0, 0%, 90%);
+    --light-theme-keypad-bg:hsl(0, 5%, 81%);
+    --light-theme-screen-bg:hsl(0, 0%, 93%);
+    --light-theme-key-bg: hsl(185, 42%, 37%);
+    --light-theme-key-shadow:hsl(185, 58%, 25%);
+    --light-theme-toggle-bg:hsl(25, 98%, 40%);
+    --light-theme-key-shadow-orange:hsl(25, 99%, 27%);
+    --light-theme-yellow-bg:hsl(45, 7%, 89%);
+    --light-theme-dark-orange:hsl(35, 11%, 61%);
+    --light-theme-text:hsl(60, 10%, 19%);
+    /*End Light Theme Colors*/
+
+    /*Start Dark1 Theme Colors*/
+    --dark1-theme-main-bg: hsl(222, 26%, 31%);
+    --dark1-theme-keypad-bg:hsl(223, 31%, 20%);
+    --dark1-theme-screen-bg:hsl(224, 36%, 15%);
+    --dark1-theme-key-bg: hsl(225, 21%, 49%);
+    --dark1-theme-key-shadow:hsl(224, 28%, 35%);
+    --dark1-theme-toggle-bg:hsl(6, 63%, 50%);
+    --dark1-theme-key-shadow-red:hsl(6, 70%, 34%);
+    --dark1-theme-orange-bg:hsl(30, 25%, 89%);
+    --dark1-theme-grayish-orange:hsl(28, 16%, 65%);
+    --dark1-theme-text:hsl(221, 14%, 31%);
+    /*End Dark1 Theme Colors*/
+
+    /*Start Dark2 Theme Colors*/
+    --dark2-theme-main-bg: hsl(268, 75%, 9%);
+    --dark2-theme-keypad-bg:hsl(268, 71%, 12%);
+    --dark2-theme-screen-bg:hsl(268, 71%, 12%);
+    --dark2-theme-key-bg: hsl(281, 89%, 26%);
+    --dark2-theme-key-shadow:hsl(285, 91%, 52%);
+    --dark2-theme-toggle-bg:hsl(176, 100%, 44%);
+    --dark2-theme-key-shadow-cyan: hsl(177, 92%, 70%);
+    --dark2-theme-violet-bg:hsl(268, 47%, 21%);
+    --dark2-theme-magenta:hsl(290, 70%, 36%);
+    --dark2-theme-yellow-text:hsl(52, 100%, 62%);
+    --dark2-theme-blue-text:hsl(198, 20%, 13%);
+    /*End Dark2 Theme Colors*/
+}
+
+*{
+    padding:0 ;
+    margin:0 ;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif !important;
+}
+input{
+    width: 100%;
+    height:50px;
+}
+.dark1 input{
+    background-color: var(--dark1-theme-screen-bg);
+    color:white;
+}
+.light input{
+    background-color: var(--light-theme-screen-bg);
+    color:var(--light-theme-text);
+}
+.dark2 input{
+    background-color: var(--dark2-theme-screen-bg);
+    color:var(--dark2-theme-yellow-text);
+}
+main{
+    width:90%;
+    max-width:350px;
+}
+p{
+    margin-bottom:0px;
+}
+.dark1 p{
+    color:white;
+}
+.dark2 p{
+    color:var(--dark2-theme-yellow-text);
+}
+.light p{
+    color:var(--light-theme-text);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.dark1{
+    background-color: var(--dark1-theme-main-bg);
+}
+body.light{
+    background-color: var(--light-theme-main-bg);
+}
+body.dark2{
+    background-color: var(--dark2-theme-main-bg);
+}
+
+.toggler{
+    width: 50px;
+    height: 15px;
+    border-radius: 20px;
+    position: relative;
+    padding:0px 5px;
+}
+.dark1 .toggler{
+    background-color: var(--dark1-theme-keypad-bg);
+}
+.dark2 .toggler{
+    background-color: var(--dark2-theme-keypad-bg);
+}
+.light .toggler{
+    background-color: var(--light-theme-keypad-bg);
+}
+.toggler .ball{
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition:0.3s;
+}
+.dark1 .toggler .ball{
+    background-color: var(--dark1-theme-toggle-bg);
+}
+.dark2 .toggler .ball{
+    background-color: var(--dark2-theme-toggle-bg);
+}
+.light .toggler .ball{
+    background-color: var(--light-theme-toggle-bg);
+}
+.toggler span{
+    position: relative;
+    cursor: pointer;
+    width:10px;
+    height:10px;
+    z-index: 2;
+    border-radius: 50%;
+}
+.toggler span::before{
+    position: absolute;
+    top: 0;
+    transform: translate(-50%,-100%);
+}
+.dark1 .toggler span::before{
+    color:white;
+}
+.dark2 .toggler span::before{
+    color:var(--dark2-theme-yellow-text);
+}
+.light .toggler span::before{
+    color:var(--light-theme-text);
+}
+.toggler span:nth-child(1)::before{
+    content:"1";
+    left:5px;
+}
+.toggler span:nth-child(2)::before{
+    content:"2";
+    left:50%;
+}
+.toggler span:nth-child(3)::before{
+    content:"3";
+    left:calc(100% - 5px);
+}
+.keypad,.btn{
+    transition: 0.3s;
+}
+
+.dark1 .keypad{
+    background-color: var(--dark1-theme-keypad-bg);
+}
+.dark2 .keypad{
+    background-color: var(--dark2-theme-keypad-bg);
+}
+.light .keypad{
+    background-color: var(--light-theme-keypad-bg);
+}
+.dark1 .btn{
+    background-color: var(--dark1-theme-orange-bg);
+    color:var(--dark1-theme-text);
+    border-bottom:3px solid var(--dark1-theme-grayish-orange);
+}
+.light .btn{
+    background-color: var(--light-theme-yellow-bg);
+    color:var(--light-theme-text);
+    border-bottom:3px solid var(--light-theme-dark-orange);
+}
+.dark2 .btn{
+    background-color: var(--dark2-theme-violet-bg);
+    color:var(--dark2-theme-yellow-text);
+    border-bottom:3px solid var(--dark2-theme-magenta);
+}
+.dark1 .btn.del,.dark1 .btn.reset{
+    background-color: var(--dark1-theme-key-bg);
+    color:white;
+    border-bottom:3px solid var(--dark1-theme-key-shadow);
+}
+.light .btn.del,.light .btn.reset{
+    background-color: var(--light-theme-key-bg);
+    color:white;
+    border-bottom:3px solid var(--light-theme-key-shadow);
+}
+.dark2 .btn.del,.dark2 .btn.reset{
+    background-color: var(--dark2-theme-key-bg);
+    color:white;
+    border-bottom:3px solid var(--dark2-theme-key-shadow);
+}
+.dark1 .btn.equal{
+    background-color: var(--dark1-theme-toggle-bg);
+    color:white;
+    border-bottom:3px solid var(--dark1-theme-key-shadow-red);
+}
+.light .btn.equal{
+    background-color: var(--light-theme-toggle-bg);
+    color:white;
+    border-bottom:3px solid var(--dark1-theme-key-shadow-red);
+}
+.dark2 .btn.equal{
+    background-color: var(--dark2-theme-toggle-bg);
+    color:var(--dark2-theme-blue-text);
+    border-bottom:3px solid var(--dark2-theme-key-shadow-cyan);
+}
